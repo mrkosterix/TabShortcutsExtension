@@ -1,0 +1,764 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--  This is the file that defines the actual layout and type of the commands.
+        It is divided in different sections (e.g. command definition, command
+        placement, ...), with each defining a specific set of properties.
+        See the comment before each section for more details about how to
+        use it. -->
+
+  <!--  The VSCT compiler (the tool that translates this file into the binary
+        format that VisualStudio will consume) has the ability to run a preprocessor
+        on the vsct file; this preprocessor is (usually) the C++ preprocessor, so
+        it is possible to define includes and macros with the same syntax used
+        in C++ files. Using this ability of the compiler here, we include some files
+        defining some of the constants that we will use inside the file. -->
+
+  <!--This is the file that defines the IDs for all the commands exposed by VisualStudio. -->
+  <Extern href="stdidcmd.h" />
+
+  <!--This header contains the command ids for the menus provided by the shell. -->
+  <Extern href="vsshlids.h" />
+
+  <!--The Commands section is where commands, menus, and menu groups are defined.
+      This section uses a Guid to identify the package that provides the command defined inside it. -->
+  <Commands package="guidSwitchToTabCommandPackage">
+    <!-- Inside this section we have different sub-sections: one for the menus, another
+    for the menu groups, one for the buttons (the actual commands), one for the combos
+    and the last one for the bitmaps used. Each element is identified by a command id that
+    is a unique pair of guid and numeric identifier; the guid part of the identifier is usually
+    called "command set" and is used to group different command inside a logically related
+    group; your package should define its own command set in order to avoid collisions
+    with command ids defined by other packages. -->
+
+    <!-- In this section you can define new menu groups. A menu group is a container for
+         other menus or buttons (commands); from a visual point of view you can see the
+         group as the part of a menu contained between two lines. The parent of a group
+         must be a menu. -->
+    <Groups>
+      <Group guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_VIEW" />
+      </Group>
+    </Groups>
+
+    <!--Buttons section. -->
+    <!--This section defines the elements the user can interact with, like a menu command or a button
+        or combo box in a toolbar. -->
+    <Buttons>
+      <!--To define a menu group you have to specify its ID, the parent menu and its display priority.
+          The command is visible and enabled by default. If you need to change the visibility, status, etc, you can use
+          the CommandFlag node.
+          You can add more than one CommandFlag node e.g.:
+              <CommandFlag>DefaultInvisible</CommandFlag>
+              <CommandFlag>DynamicVisibility</CommandFlag>
+          If you do not want an image next to your command, remove the Icon node /> -->
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <!--Icon guid="guidImages" id="bmpPic1" /-->
+        <Strings>
+          <ButtonText>Invoke SwitchToTabCommand</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="UpdateAllTabTitles" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Update All Tab Titles</ButtonText>
+        </Strings>
+      </Button>
+
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabA" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab A</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabB" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab B</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabC" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab C</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabD" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab D</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabE" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab E</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabF" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab F</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabG" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab G</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabH" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab H</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabI" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab I</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabJ" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab J</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabK" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab K</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabL" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab L</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabM" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab M</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabN" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab N</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabO" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab O</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabP" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab P</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabQ" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab Q</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabR" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab R</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabS" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab S</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabT" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab T</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabU" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab U</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabV" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab V</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabW" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab W</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabX" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab X</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabY" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab Y</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabZ" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab Z</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTab0" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab 0</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTab1" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab 1</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTab2" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab 2</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTab3" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab 3</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTab4" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab 4</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTab5" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab 5</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTab6" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab 6</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTab7" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab 7</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTab8" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab 8</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTab9" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Switch To Tab 9</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToA" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To A</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToB" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To B</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToC" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To C</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToD" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To D</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToE" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To E</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToF" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To F</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToG" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To G</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToH" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To H</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToI" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To I</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToJ" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To J</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToK" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To K</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToL" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To L</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToM" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To M</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToN" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To N</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToO" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To O</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToP" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To P</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToQ" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To Q</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToR" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To R</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToS" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To S</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToT" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To T</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToU" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To U</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToV" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To V</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToW" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To W</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToX" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To X</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToY" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To Y</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutToZ" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To Z</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutTo0" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To 0</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutTo1" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To 1</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutTo2" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To 2</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutTo3" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To 3</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutTo4" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To 4</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutTo5" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To 5</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutTo6" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To 6</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutTo7" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To 7</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutTo8" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To 8</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSwitchToTabCommandPackageCmdSet" id="ChangeTabShortcutTo9" priority="0x0100" type="Button">
+        <Parent guid="guidSwitchToTabCommandPackageCmdSet" id="SwitchToTabGroup" />
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Change Tab Shortcut To 9</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+
+    <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
+    <Bitmaps>
+      <!--  The bitmap id is defined in a way that is a little bit different from the others:
+            the declaration starts with a guid for the bitmap strip, then there is the resource id of the
+            bitmap strip containing the bitmaps and then there are the numeric ids of the elements used
+            inside a button definition. An important aspect of this declaration is that the element id
+            must be the actual index (1-based) of the bitmap inside the bitmap strip. -->
+      <Bitmap guid="guidImages" href="Resources\SwitchToTabCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+    </Bitmaps>
+  </Commands>
+
+  <Symbols>
+    <!-- This is the package guid. -->
+    <GuidSymbol name="guidSwitchToTabCommandPackage" value="{4aea3ee3-ddc5-4833-95db-63544f49096a}" />
+
+    <!-- This is the guid used to group the menu commands together -->
+    <GuidSymbol name="guidSwitchToTabCommandPackageCmdSet" value="{619bed49-70fd-470e-82e1-840544513d8d}">
+      <IDSymbol name="SwitchToTabGroup" value="0x1020" />
+      <IDSymbol name="SwitchToTabCommandId" value="0x0100" />
+
+      <IDSymbol name="UpdateAllTabTitles" value="4129" />
+
+      <IDSymbol name="SwitchToTabA" value="4130" />
+      <IDSymbol name="SwitchToTabB" value="4131" />
+      <IDSymbol name="SwitchToTabC" value="4132" />
+      <IDSymbol name="SwitchToTabD" value="4133" />
+      <IDSymbol name="SwitchToTabE" value="4134" />
+      <IDSymbol name="SwitchToTabF" value="4135" />
+      <IDSymbol name="SwitchToTabG" value="4136" />
+      <IDSymbol name="SwitchToTabH" value="4137" />
+      <IDSymbol name="SwitchToTabI" value="4138" />
+      <IDSymbol name="SwitchToTabJ" value="4139" />
+      <IDSymbol name="SwitchToTabK" value="4140" />
+      <IDSymbol name="SwitchToTabL" value="4141" />
+      <IDSymbol name="SwitchToTabM" value="4142" />
+      <IDSymbol name="SwitchToTabN" value="4143" />
+      <IDSymbol name="SwitchToTabO" value="4144" />
+      <IDSymbol name="SwitchToTabP" value="4145" />
+      <IDSymbol name="SwitchToTabQ" value="4146" />
+      <IDSymbol name="SwitchToTabR" value="4147" />
+      <IDSymbol name="SwitchToTabS" value="4148" />
+      <IDSymbol name="SwitchToTabT" value="4149" />
+      <IDSymbol name="SwitchToTabU" value="4150" />
+      <IDSymbol name="SwitchToTabV" value="4151" />
+      <IDSymbol name="SwitchToTabW" value="4152" />
+      <IDSymbol name="SwitchToTabX" value="4153" />
+      <IDSymbol name="SwitchToTabY" value="4154" />
+      <IDSymbol name="SwitchToTabZ" value="4155" />
+      <IDSymbol name="SwitchToTab0" value="4156" />
+      <IDSymbol name="SwitchToTab1" value="4157" />
+      <IDSymbol name="SwitchToTab2" value="4158" />
+      <IDSymbol name="SwitchToTab3" value="4159" />
+      <IDSymbol name="SwitchToTab4" value="4160" />
+      <IDSymbol name="SwitchToTab5" value="4161" />
+      <IDSymbol name="SwitchToTab6" value="4162" />
+      <IDSymbol name="SwitchToTab7" value="4163" />
+      <IDSymbol name="SwitchToTab8" value="4164" />
+      <IDSymbol name="SwitchToTab9" value="4165" />
+
+      <IDSymbol name="ChangeTabShortcutToA" value="4166" />
+      <IDSymbol name="ChangeTabShortcutToB" value="4167" />
+      <IDSymbol name="ChangeTabShortcutToC" value="4168" />
+      <IDSymbol name="ChangeTabShortcutToD" value="4169" />
+      <IDSymbol name="ChangeTabShortcutToE" value="4170" />
+      <IDSymbol name="ChangeTabShortcutToF" value="4171" />
+      <IDSymbol name="ChangeTabShortcutToG" value="4172" />
+      <IDSymbol name="ChangeTabShortcutToH" value="4173" />
+      <IDSymbol name="ChangeTabShortcutToI" value="4174" />
+      <IDSymbol name="ChangeTabShortcutToJ" value="4175" />
+      <IDSymbol name="ChangeTabShortcutToK" value="4176" />
+      <IDSymbol name="ChangeTabShortcutToL" value="4177" />
+      <IDSymbol name="ChangeTabShortcutToM" value="4178" />
+      <IDSymbol name="ChangeTabShortcutToN" value="4179" />
+      <IDSymbol name="ChangeTabShortcutToO" value="4180" />
+      <IDSymbol name="ChangeTabShortcutToP" value="4181" />
+      <IDSymbol name="ChangeTabShortcutToQ" value="4182" />
+      <IDSymbol name="ChangeTabShortcutToR" value="4183" />
+      <IDSymbol name="ChangeTabShortcutToS" value="4184" />
+      <IDSymbol name="ChangeTabShortcutToT" value="4185" />
+      <IDSymbol name="ChangeTabShortcutToU" value="4186" />
+      <IDSymbol name="ChangeTabShortcutToV" value="4187" />
+      <IDSymbol name="ChangeTabShortcutToW" value="4188" />
+      <IDSymbol name="ChangeTabShortcutToX" value="4189" />
+      <IDSymbol name="ChangeTabShortcutToY" value="4190" />
+      <IDSymbol name="ChangeTabShortcutToZ" value="4191" />
+      <IDSymbol name="ChangeTabShortcutTo0" value="4192" />
+      <IDSymbol name="ChangeTabShortcutTo1" value="4193" />
+      <IDSymbol name="ChangeTabShortcutTo2" value="4194" />
+      <IDSymbol name="ChangeTabShortcutTo3" value="4195" />
+      <IDSymbol name="ChangeTabShortcutTo4" value="4196" />
+      <IDSymbol name="ChangeTabShortcutTo5" value="4197" />
+      <IDSymbol name="ChangeTabShortcutTo6" value="4198" />
+      <IDSymbol name="ChangeTabShortcutTo7" value="4199" />
+      <IDSymbol name="ChangeTabShortcutTo8" value="4200" />
+      <IDSymbol name="ChangeTabShortcutTo9" value="4201" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImages" value="{8e8d593d-8ebc-46cb-9c71-68a831807cb7}">
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+  
+    <GuidSymbol value="{ce1aa6b2-c9d2-4513-be3f-6386c2a38fc5}" name="guidImages1">
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
