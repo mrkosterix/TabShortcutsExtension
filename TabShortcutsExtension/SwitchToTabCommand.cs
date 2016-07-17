@@ -42,11 +42,17 @@ namespace TabShortcutsExtension
             {
                 documentGroup = group;
 
-                documentGroup.VisibleChildren.CollectionChanged += TabShortcutsManager.GetInstance().OnDocumentGroupChanged;
+                documentGroup.PinnedViews.CollectionChanged += TabShortcutsManager.GetInstance().OnPinnedViewsChanged;
+                documentGroup.VisibleChildren.CollectionChanged += TabShortcutsManager.GetInstance().OnVisibleChildrenChanged;
 
                 List<View> activeViews = new List<View>();
                 var children = documentGroup.VisibleChildren.OfType<View>();
                 foreach (var child in children)
+                {
+                    activeViews.Add(child);
+                }
+                var pinnedChildren = documentGroup.PinnedViews.OfType<View>();
+                foreach (var child in pinnedChildren)
                 {
                     activeViews.Add(child);
                 }

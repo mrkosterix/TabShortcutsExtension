@@ -44,22 +44,28 @@ namespace TabShortcutsExtension
         }
 
         [MethodImpl(MethodImplOptions.Synchronized)]
-        public void OnDocumentGroupChanged(object sender, NotifyCollectionChangedEventArgs e)
+        public void OnVisibleChildrenChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.NewItems != null)
                 foreach (View view in e.NewItems)
                     RegisterTabView(view);
             if (e.OldItems != null)
                 foreach (View view in e.OldItems)
-                    UnregisterTabView(view);
+                    if (!view.IsPinned)
+                        UnregisterTabView(view);
         }
 
-        /*
-        public void OnItemRenamed(object Item, object ItemParent, string OldName)
+        [MethodImpl(MethodImplOptions.Synchronized)]
+        public void OnPinnedViewsChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            int i = 0;
+            if (e.NewItems != null)
+                foreach (View view in e.NewItems)
+                    RegisterTabView(view);
+            if (e.OldItems != null)
+                foreach (View view in e.OldItems)
+                    if (!view.IsVisible)
+                        UnregisterTabView(view);
         }
-        */
 
         [MethodImpl(MethodImplOptions.Synchronized)]
         public void UpdateActiveViews(List<View> activeViews)
