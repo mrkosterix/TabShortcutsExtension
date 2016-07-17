@@ -44,5 +44,6 @@ Temporary Items
 
 
 .vs/
+packages/
 bin/
 obj/
