@@ -101,7 +101,7 @@ namespace TabShortcutsExtension
         }
     }
 
-    internal sealed class UpdateAllTabTitles
+    internal sealed class UpdateActiveDocumentGroup
     {
         public const int CommandId = 4129;
 
@@ -109,7 +109,7 @@ namespace TabShortcutsExtension
 
         private readonly Package package;
 
-        public UpdateAllTabTitles(Package package)
+        public UpdateActiveDocumentGroup(Package package)
         {
             if (package == null)
             {
@@ -137,7 +137,7 @@ namespace TabShortcutsExtension
 
         private void MenuItemCallback(object sender, EventArgs e)
         {
-            TabShortcutsManager.GetInstance().UpdateAllTabTitles();
+            TabShortcutsManager.GetInstance().UpdateActiveDocumentGroup();
         }
     }
 }

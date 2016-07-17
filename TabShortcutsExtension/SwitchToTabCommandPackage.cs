@@ -42,6 +42,7 @@ namespace TabShortcutsExtension
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(SwitchToTabCommandPackage.PackageGuidString)]
     [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "pkgdef, VS and vsixmanifest are valid VS terms")]
+    [ProvideAutoLoad(UIContextGuids80.SolutionExists)]
     public sealed class SwitchToTabCommandPackage : Package
     {
         /// <summary>
@@ -64,7 +65,7 @@ namespace TabShortcutsExtension
 
         
         string[] shortcuts = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-        UpdateAllTabTitles updateAllTabTitles;
+        UpdateActiveDocumentGroup updateAllTabTitles;
         Dictionary<string, SwitchToTab> switchToTabButtons;
         Dictionary<string, ChangeToShortcut> changeShortcutButtons;
 
@@ -79,7 +80,7 @@ namespace TabShortcutsExtension
             SwitchToTabCommand.Initialize(this);
             base.Initialize();
 
-            updateAllTabTitles = new UpdateAllTabTitles(this);
+            updateAllTabTitles = new UpdateActiveDocumentGroup(this);
 
             const int switchToTabButtonStartIndex = 4130;
             const int changeShortcutButtonStartIndex = 4166;
@@ -91,11 +92,10 @@ namespace TabShortcutsExtension
                 changeShortcutButtons[shortcut] = new ChangeToShortcut(this, changeShortcutButtonStartIndex + buttonIndex, shortcut);
                 ++buttonIndex;
             }
-            /*
+
             EnvDTE.DTE dte = base.GetService(typeof(EnvDTE.DTE)) as EnvDTE.DTE;
             VCProjectEngineEvents projectItemsEvents = dte.Events.GetObject("VCProjectEngineEventsObject") as VCProjectEngineEvents;
             projectItemsEvents.ItemRenamed += TabShortcutsManager.GetInstance().OnItemRenamed;
-            */
         }
 
         #endregion
