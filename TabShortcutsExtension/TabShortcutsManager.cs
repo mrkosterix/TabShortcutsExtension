@@ -95,7 +95,7 @@ namespace TabShortcutsExtension
                     RegisterTabView(view);
             if (e.OldItems != null)
                 foreach (View view in e.OldItems)
-                    if (!view.IsPinned)
+                    if (!view.IsVisible && !view.IsPinned)
                         UnregisterTabView(view);
         }
 
@@ -188,6 +188,11 @@ namespace TabShortcutsExtension
                 SetTitleWithoutShortcut(oldView);
                 SetTitleWithShortcut(oldView, activeViewShortcutIndex);
             }
+            else
+            {
+                isShortcutAvailable[activeViewShortcutIndex] = true;
+                shortcutViews[activeViewShortcutIndex] = null;
+            }
 
             isShortcutAvailable[shortcutIndex] = false;
             shortcutViews[shortcutIndex] = activeViewHandle;
@@ -259,6 +264,18 @@ namespace TabShortcutsExtension
         }
 
         public void UpdateActiveDocumentGroup()
+        {
+            var activeView = ViewManager.Instance.ActiveView;
+            if (activeView == null)
+                return;
+            var group = activeView.Parent as DocumentGroup;
+            if (group != null)
+            {
+                SetDocumentGroup(group);
+            }
+        }
+
+        public void ForceUpdateActiveDocumentGroup()
         {
             var activeView = ViewManager.Instance.ActiveView;
             if (activeView == null)

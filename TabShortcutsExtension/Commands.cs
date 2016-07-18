@@ -137,7 +137,7 @@ namespace TabShortcutsExtension
 
         private void MenuItemCallback(object sender, EventArgs e)
         {
-            TabShortcutsManager.GetInstance().UpdateActiveDocumentGroup();
+            TabShortcutsManager.GetInstance().ForceUpdateActiveDocumentGroup();
         }
     }
 }
